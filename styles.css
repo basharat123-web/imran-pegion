@@ -1,0 +1,412 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4; /* Light background for better contrast */
+}
+
+.swiper {
+  width: 100%; /* Adjust width */
+  height: auto; /* Auto height based on content */
+}
+
+.swiper-slide {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 200px; /* Maintain natural height */
+  object-fit: cover; /* Ensure image fits without distortion */
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
+
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to a new line */
+  justify-content: space-around;
+  padding: 14px 0;
+}
+
+.navbar a {
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 5px;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+  transform: scale(1.1);
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Adjust width as needed */
+  height: 300px; /* Adjust height as needed */
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: slideShow 9s infinite;
+}
+
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 3s; }
+.slide:nth-child(3) { animation-delay: 6s; }
+
+@keyframes slideShow {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.banner img {
+  width: 100%; /* Make images stretch across the full width */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 250px; /* Set a max height if needed */
+  object-fit: cover; /* Ensures images cover the area without distortion */
+}
+
+@keyframes highlightCell {
+  0% { background-color: #4CAF50; color: white; }
+  50% { background-color: #45a049; color: white; }
+  100% { background-color: transparent; color: inherit; }
+}
+
+.highlight {
+  animation: highlightCell 5s ease-out;
+}
+
+.table-container table td {
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .banner img {
+    max-height: 150px; /* Adjust max height for smaller screens */
+  }
+}
+.banner img.active {
+  opacity: 1; /* Show the active image */
+  transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
+}
+
+table {
+  width: 100%; /* Full width */
+  border-collapse: collapse; /* Collapse borders */
+}
+
+th, td {
+  border: 1px solid #ddd; /* Light border */
+  padding: 8px; /* Padding for cells */
+  text-align: left; /* Align text to the left */
+}
+
+th {
+  background-color: #4CAF50; /* Green background for header */
+  color: white; /* White text for header */
+}
+
+tr:hover {
+  background-color: #f1f1f1; /* Light grey background on hover */
+}
+
+.news-ticker-container {
+  background-color: #fdf6e3; /* Light beige background */
+  border: 1px solid #dfe5d7; /* Light green border */
+  padding: 8px 0px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.news-label {
+  padding: 0px 10px;
+  background-color: white;
+  z-index: 3;
+  font-weight: bold;
+  color: red;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.news-content {
+  z-index: 1;
+  color: black;
+  white-space: nowrap;
+  overflow: hidden;
+  flex: 1;
+  animation: newsScroll 10s linear infinite;
+}
+
+@keyframes newsScroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.facebook-icon {
+  padding: 0px 10px;
+  z-index: 3;
+  background-color: white;
+  size: 1cm;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%); /* Start off-screen to the right */
+  }
+  100% {
+    transform: translateX(-100%); /* End off-screen to the left */
+  }
+}
+
+
+.banner img.active {
+  opacity: 1; /* Show the active image */
+  z-index: 1; /* Ensure the active image is on top */
+}
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1d2b64, #f8cdda);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@600&display=swap');
+
+#welcome-note {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem; /* Slightly larger for emphasis */
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #120d2b 0%, #db5609 100%); /* Gradient to match the purple-blue theme */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 1rem 0;
+    padding: 0.2em 0.5em;
+    position: relative;
+    text-align: center; /* Centered like in your image */
+}
+
+#welcome-note:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 5px;
+    background: #00ddeb; /* Cyan underline to match the gradient */
+    border-radius: 2px;
+}
+
+.pigeon-info {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem; /* Slightly larger for emphasis */
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #120d2b 0%, #db5609 100%); /* Gradient to match the purple-blue theme */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 1rem 0;
+  padding: 0.2em 0.5em;
+}
+
+/* Summary Cards */
+.summary-cards {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.total {
+    background: rgba(46, 204, 113, 0.8);
+}
+
+.flown {
+    background: rgba(52, 152, 219, 0.8);
+}
+
+.remaining {
+    background: rgba(231, 76, 60, 0.8);
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  display: block;
+  white-space: nowrap;
+}
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    min-width: 600px;
+}
+
+thead {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+th {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+tbody tr:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    padding: 0px;
+  }
+  .swiper-slide img {
+  width: 100%;
+  height: 100px;
+  object-fit: fill;
+  border-radius: 10px; /* Optional: Adds rounded corners */
+}
+.swiper-button-next{
+  height: 20px;
+  width: 20px;
+}
+  .navbar {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .navbar a {
+    padding: 8px;
+    font-size: 11px;
+  }
+
+  .summary-cards {
+    flex-direction: column;
+  }
+  
+  .banner img {
+    max-height: 120px;
+  }
+  .swiper-slide {
+    height: 120px;
+   padding: 5px;
+  }
+
+  #welcome-note {
+    font-size: 17px;
+    margin-bottom: 35px;
+  }
+
+  #welcome-note:after {
+    bottom: -10px;
+  }
+
+ 
+  .swiper {
+    height: 110px;
+  }
+
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+
+  table {
+    width: 100%;
+    min-width: auto; /* Ensures scrolling is needed on smaller screens */
+  }
+}
+  
